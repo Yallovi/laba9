@@ -39,7 +39,22 @@ p{
 input{
   padding: 5px;
   margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 50px;
 }
 button{
-  color: red;
+ cursor: pointer;
+ width: 200px;
+ height: 30px;
+ border-radius: 50px;
+ border: 0;
+ outline: 0;
+ font-size: 16px;
+ font-weight: 700;
+ line-height: 25.47px;
+ color: #202020;
+ background-color: #ffdc38;
+}
+#sortItems {
+  border-radius: 50px;
 }
