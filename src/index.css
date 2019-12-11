@@ -5,9 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#reposList{
+  width: auto;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.repo{
+  width: 600px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+ 
+}
+img{
+  width: 100px;
+  height: 100px;
 }
