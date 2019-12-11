@@ -7,9 +7,7 @@ export default class Main extends Component{
         super(props);
         this.state = {
             data: [],
-            page: 1,
-            pages: 100,
-            itemsPerPage: 10
+            
         }
     }
     searchNew() {
@@ -33,7 +31,8 @@ export default class Main extends Component{
 
             if(sortItems === "most-stars") url += "&order=desc" + "&sort=stars";
             if(sortItems === "fewest-stars") url += "&order=asc" + "&sort=stars";
-
+            if(sortItems === "most-followers") url += "&order=desc" + "&sort=followers";
+            if(sortItems === "fewest-followers") url += "&order=asc" + "&sort=followers";
             axios(url)
             .then(response => {
                 if(response.data.items.length !== 0){
@@ -51,24 +50,19 @@ export default class Main extends Component{
 
         }
     }
-    changeCurrentPage(page){
-        this.setState(() => {
-            return{
-                page: page
-            };
-        });
-    }
 
     render(){
         return(
             <div>
-                <h2>Global GitHub repo search</h2>
+                <h2>Поиск репозиториев</h2>
                 <div>
                     <input type="text" id="searchText"/>
-                    <button onClick={() => this.searchNew()}>Search</button><br></br>
-                    <select id="sortItems" onChange={() => this.changeCurrentPage(1)}>
-                        <option value="most-stars">Most stars</option>
-                        <option value="fewest-stars">Fewest stars</option>
+                    <button onClick={() => this.searchNew()}>Поиск</button><br></br>
+                    <select id="sortItems">
+                        <option value="most-stars">Наивысший рейтинг</option>
+                        <option value="fewest-stars">Наименьший рейтин</option>
+                        <option value="most-followers">Наиболбшее число подптсчиков</option>
+                        <option value="fewest-followers">Наименьшее число подптсчиков</option>
                     </select>
                     <input 
                     id = "itemNumber"
